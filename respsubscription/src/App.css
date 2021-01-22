@@ -6,15 +6,188 @@
 	box-sizing: border-box;
 }
 
+body {
+	font-family: 'Karla', sans-serif;
+	background-color: #EEEEEE;
+	
+}
+
 .main-div {
-	height: 100vh;
+	
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	background-color: #EEEEEE;
+	margin: 5%;
+	}
+
+.wrapper {
+	
+	width: 70%;
 }
+
+header {
+	background-color: #FEFEFE;
+	padding: 5%;
+	
+}
+
+h2 {
+	color: #0FC7C4;
+	line-height: 220%;
+}
+
+.h4-header {
+	color: #AFE14E;
+	line-height: 200%;
+}
+
+h5 {
+	color: #CACAD1;
+	line-height: 180%;
+}
+
+.h4-section {
+	color: #F2FCFD;
+	padding-bottom: 5%;
+}
+
 
 .first-section {
 	display: flex;
 	justify-content:left;
+}
+
+.subscript {
+	background-color:	#00B2AE;
+	width: 50%;
+	padding: 5%;
+	line-height: 200%;
+}
+
+span {
+	color: #39D1D1;
+}
+
+.price {
+color: white;
+font-size: 180%;
+}
+
+.whyus {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	background-color:	#12BCBA;
+	width: 50%;
+	padding: 5%;
+}
+
+p {
+	color: #8BE8EF;
+	font-size: 80%;
+	line-height: 140%;
+}
+
+button {
+	color: #F5FED0;
+	background-color: #AFE14E;
+	border: solid 1px #AFE14E;
+	border-radius: 4px;
+	width: 75%;
+	height: 40px;
+	margin-top: 30px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  }
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.form-hide {
+	visibility: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	width: 50%;
+	background-color: white;
+	opacity: .9;
+}
+
+.form-show {
+	visibility: visible;
+}
+
+input {
+	background-color:#AFE14E;
+	border:#12BCBA 1px solid;
+	margin: 1%;
+	border-radius: 3px;
+	width: 80%;
+}
+
+#submit {
+	width: 25%;
+	margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 700px) {
+	body {
+		font-size: 70%;
+	}
+
+	.first-section {
+		flex-direction: column;
+	}
+
+	.subscript {
+		width: 100%;
+	}
+
+	.whyus {
+		width: 100%;
+	}
 }

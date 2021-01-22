@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
@@ -6,21 +6,21 @@ function App() {
     <div className="main-div">
       <div className="wrapper">
         <header>
-          <h1>Join our community</h1>
-          <h2>30 day, hassle-free money back guarantee</h2>
-          <h3>Gain access to our full library of tutorials along with expert code reviews.</h3>
-          <h3>Perfect for any developerswho are serious about honing their skills.</h3>        
+          <h2>Join our community</h2>
+          <h4 className="h4-header">30 day, hassle-free money back guarantee</h4>
+          <h5>Gain access to our full library of tutorials along with expert code reviews.</h5>
+          <h5>Perfect for any developers who are serious about honing their skills.</h5>        
         </header>
         <section className="first-section">
           <div className="subscript">
-            <h4>Monthly subscription</h4>
-            <span className="price">$29</span>
+            <h4 className="h4-section">Monthly subscription</h4>
+            <span className="price">$29 </span>
             <span>per month</span>
             <p>Full access for less than 1$  a day</p>
-            <button>Sign Up</button>
+            <button id="signUp" className="tooltip" onClick="formStart()">Sign Up<span className="tooltiptext">Sign up now!</span></button>
           </div>
           <div className="whyus">
-            <h4>Why us</h4>
+            <h4 className="h4-section">Why us</h4>
             <p>Tutorials by industry experts</p>
             <p>Peer & expert code review</p>
             <p>Coding expercises</p>
@@ -31,8 +31,19 @@ function App() {
           </div>
         </section>
       </div> 
+    <form className="form-hide">
+      <input id="input-name" type="text" placeholder="name" value=""/>
+      <input id="input-date" type="date" placeholder="birthdate" value=""/>
+      <input id="input-address" type="text" placeholder="billing address" value=""/>
+      <button id="submit">submit</button>
+    </form>
     </div>
   );
+
 }
+/*function formStart() {
+  document.getElementById("signUp").parentNode.className !== "form-show" ? document.getElementById("signUp").parentNode.className = "form-show" : document.getElementById("signUp").parentNode.className = "form-hide";
+}*/
+
 
 export default App;
