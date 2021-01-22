@@ -1,13 +1,16 @@
 
 import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+function App() {                                              /*A form megjelenítése*/
   function formStart() {
     const signUpForm = document.querySelector('.form-hide');
     signUpForm.style.visibility = 'visible';
   }
 
-  function submitStart(e) {
+  const [isShown, setIsShown] = useState(false);        /* változók a signup gom szövegváltásához*/
+
+  function submitStart(e) {                             /*az input mezők értékeinek kiíratása*/
     e.preventDefault();
     let inputs = document.querySelectorAll('input');
     let inputValues = '';
@@ -34,7 +37,12 @@ function App() {
             <span className="price">$29 </span>
             <span>per month</span>
             <p>Full access for less than 1$  a day</p>
-            <button id="signUp" className="tooltip" onClick={formStart}>Sign Up<span className="tooltiptext">Sign up now!</span></button>
+            <button id="signUp" onClick={formStart}
+              onMouseEnter={() => setIsShown(true)}
+              onMouseLeave={() => setIsShown(false)}>
+                Sign up {isShown && (<span id='spanButton'>now!</span>)}
+            </button>
+
           </div>
           <div className="whyus">
             <h4 className="h4-section">Why us</h4>
@@ -52,7 +60,7 @@ function App() {
       <input id="name" type="text" placeholder="name"/>
       <input id="date" type="date" placeholder="birthdate"/>
       <input id="address" type="text" placeholder="billing address"/>
-      <button className="submit" onClick={submitStart}>submit</button>
+      <button id="submit" onClick={submitStart}>submit</button>
     </form>
     </div>
   );
