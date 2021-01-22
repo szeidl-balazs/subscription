@@ -2,6 +2,23 @@
 import './App.css';
 
 function App() {
+  function formStart() {
+    const signUpForm = document.querySelector('.form-hide');
+    signUpForm.style.visibility = 'visible';
+  }
+
+  function submitStart(e) {
+    e.preventDefault();
+    let inputs = document.querySelectorAll('input');
+    let inputValues = '';
+    for (const input of inputs) {
+      inputValues += `
+      ${input.getAttribute('id')}: ${input.value}
+      `;
+    }
+    console.log(inputValues);
+  }
+
   return (
     <div className="main-div">
       <div className="wrapper">
@@ -17,7 +34,7 @@ function App() {
             <span className="price">$29 </span>
             <span>per month</span>
             <p>Full access for less than 1$  a day</p>
-            <button id="signUp" className="tooltip" onClick="formStart()">Sign Up<span className="tooltiptext">Sign up now!</span></button>
+            <button id="signUp" className="tooltip" onClick={formStart}>Sign Up<span className="tooltiptext">Sign up now!</span></button>
           </div>
           <div className="whyus">
             <h4 className="h4-section">Why us</h4>
@@ -32,18 +49,15 @@ function App() {
         </section>
       </div> 
     <form className="form-hide">
-      <input id="input-name" type="text" placeholder="name" value=""/>
-      <input id="input-date" type="date" placeholder="birthdate" value=""/>
-      <input id="input-address" type="text" placeholder="billing address" value=""/>
-      <button id="submit">submit</button>
+      <input id="name" type="text" placeholder="name"/>
+      <input id="date" type="date" placeholder="birthdate"/>
+      <input id="address" type="text" placeholder="billing address"/>
+      <button className="submit" onClick={submitStart}>submit</button>
     </form>
     </div>
   );
 
 }
-/*function formStart() {
-  document.getElementById("signUp").parentNode.className !== "form-show" ? document.getElementById("signUp").parentNode.className = "form-show" : document.getElementById("signUp").parentNode.className = "form-hide";
-}*/
 
 
 export default App;
